@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.userinput.UserInput
 import com.example.week5.ui.theme.WEEK5Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             WEEK5Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    UserInput(
+                        modifier = Modifier.padding(innerPadding))
                 }
             }
         }

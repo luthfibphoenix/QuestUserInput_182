@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.RadioButton
@@ -30,7 +31,7 @@ import androidx.compose.ui.unit.sp
 
 @Preview(showBackground = true)
 @Composable
-fun UserInput(){
+fun UserInput(modifier: Modifier = Modifier){
     var nama by remember { mutableStateOf("") }
 
     var email by remember { mutableStateOf("") }
@@ -67,10 +68,11 @@ fun UserInput(){
         Row() {
             dataJK.forEach {
                 selectedJK ->
-                Row {
+                Row (verticalAlignment = Alignment.CenterVertically){
                     RadioButton(selected = jeniskelamin == selectedJK,
                     onClick = {jeniskelamin = selectedJK })
                 }
+                Text(text = selectedJK)
             }
         }
 
